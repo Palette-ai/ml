@@ -1,0 +1,361 @@
+dish_id,dish_rating,user_id,review,rating_id
+1,3.0,Scott Dayton,,0
+1,1.0,Charlie East,,1
+1,5.0,Basile Montagnese,,2
+1,5.0,Tommy Barbato,,3
+1,5.0,Wilson Murane,,4
+1,4.0,Chris Long,,5
+1,3.0,Chad Lasseter,,6
+1,4.0,June Kim,,7
+1,5.0,Adam Van Uden,,8
+1,5.0,Noel Siegert,,9
+1,3.0,Will Hutensky,,10
+1,5.0,Chase Alvarado-Anderson,,11
+1,4.0,Eli Hecht,,12
+1,4.0,Chait Mehra,,13
+1,3.0,Crawford Crooks,,14
+1,4.0,Stokes,,15
+1,3.0,Elian Gerard,,16
+1,4.0,Shania Smith ,,17
+1,3.0,Ben Lehrburger,,18
+1,4.0,Andres Zubillaga ,,19
+1,3.0,Toby Harding,,20
+1,4.0,Connor Quigley,,21
+1,4.0,Liam Prevelige,,22
+1,4.0,Will Cook-Healy,,23
+1,5.0,Dylan Bienstock,,24
+1,3.0,Woojin Chung,,25
+1,5.0,Patrick Howard,,26
+1,5.0,Asher Nyhoff,,27
+1,3.0,Noble Rai,,28
+1,4.0,Will Toth,,29
+1,4.0,Carter Welch,,30
+1,3.0,Anthony Wang,,31
+1,3.0,Michael Tellini,,32
+1,4.0,Jayanth Uppaluri,,33
+1,4.0,Danny Gold,,34
+1,4.0,Ethan Strauss,,35
+13,3.0,Michael Tellini,,36
+13,,Chris Long,,37
+13,3.0,Anthony Wang,,38
+13,,Jayanth Uppaluri,,39
+13,,Noel Siegert,,40
+13,4.0,Stokes,,41
+13,,Crawford Crooks,,42
+13,3.0,Ethan Strauss,,43
+13,4.0,Ben Lehrburger,,44
+13,4.0,Scott Dayton,,45
+13,4.0,Chad Lasseter,,46
+13,3.0,Will Toth,,47
+13,,Chase Alvarado-Anderson,,48
+13,3.0,Connor Quigley,,49
+13,,Adam Van Uden,,50
+13,4.0,Wilson Murane,,51
+13,3.0,Carter Welch,,52
+13,4.0,Noble Rai,,53
+13,4.0,Shania Smith ,,54
+13,,Toby Harding,,55
+13,,Chait Mehra,,56
+13,,Asher Nyhoff,,57
+13,,June Kim,,58
+13,,Tommy Barbato,,59
+13,4.0,Dylan Bienstock,,60
+13,3.0,Danny Gold,,61
+13,,Charlie East,,62
+13,,Will Hutensky,,63
+13,,Liam Prevelige,,64
+13,,Eli Hecht,,65
+13,3.0,Basile Montagnese,,66
+13,3.0,Will Cook-Healy,,67
+13,3.0,Woojin Chung,,68
+13,3.0,Elian Gerard,,69
+13,5.0,Patrick Howard,,70
+13,,Andres Zubillaga ,,71
+14,,Charlie East,,72
+14,,Noel Siegert,,73
+14,,Adam Van Uden,,74
+14,4.0,Liam Prevelige,,75
+14,,Tommy Barbato,,76
+14,3.0,Chad Lasseter,,77
+14,,Ben Lehrburger,,78
+14,5.0,Dylan Bienstock,,79
+14,4.0,Scott Dayton,,80
+14,3.0,Will Cook-Healy,,81
+14,,June Kim,,82
+14,4.0,Elian Gerard,,83
+14,,Will Hutensky,,84
+14,,Eli Hecht,,85
+14,3.0,Crawford Crooks,,86
+14,4.0,Toby Harding,,87
+14,4.0,Basile Montagnese,,88
+14,3.0,Wilson Murane,,89
+14,4.0,Danny Gold,,90
+14,4.0,Chris Long,,91
+14,5.0,Andres Zubillaga ,,92
+14,3.0,Woojin Chung,,93
+14,3.0,Carter Welch,,94
+14,3.0,Patrick Howard,,95
+14,4.0,Michael Tellini,,96
+14,3.0,Shania Smith ,,97
+14,,Chait Mehra,,98
+14,4.0,Ethan Strauss,,99
+14,5.0,Connor Quigley,,100
+14,,Jayanth Uppaluri,,101
+14,,Asher Nyhoff,,102
+14,,Stokes,,103
+14,4.0,Anthony Wang,,104
+14,4.0,Will Toth,,105
+14,,Chase Alvarado-Anderson,,106
+14,4.0,Noble Rai,,107
+24,,Chait Mehra,,108
+24,2.0,Anthony Wang,,109
+24,,Noel Siegert,,110
+24,,Eli Hecht,,111
+24,,Noble Rai,,112
+24,4.0,Adam Van Uden,,113
+24,4.0,Carter Welch,,114
+24,3.0,Will Cook-Healy,,115
+24,4.0,Dylan Bienstock,,116
+24,2.0,Patrick Howard,,117
+24,2.0,Ethan Strauss,,118
+24,5.0,Will Toth,,119
+24,2.0,Woojin Chung,,120
+24,,Asher Nyhoff,,121
+24,3.0,Connor Quigley,,122
+24,,Stokes,,123
+24,4.0,Crawford Crooks,,124
+24,,Liam Prevelige,,125
+24,2.0,Andres Zubillaga ,,126
+24,3.0,Elian Gerard,,127
+24,,Toby Harding,,128
+24,,Jayanth Uppaluri,,129
+24,,Ben Lehrburger,,130
+24,,Will Hutensky,,131
+24,3.0,Chris Long,,132
+24,,Chase Alvarado-Anderson,,133
+24,2.0,Chad Lasseter,,134
+24,,June Kim,,135
+24,3.0,Michael Tellini,,136
+24,3.0,Scott Dayton,,137
+24,,Tommy Barbato,,138
+24,,Charlie East,,139
+24,4.0,Danny Gold,,140
+24,3.0,Shania Smith ,,141
+24,3.0,Basile Montagnese,,142
+24,3.0,Wilson Murane,,143
+32,4.0,Ethan Strauss,,144
+32,,Will Cook-Healy,,145
+32,3.0,Connor Quigley,,146
+32,,Crawford Crooks,,147
+32,2.0,Carter Welch,,148
+32,3.0,Anthony Wang,,149
+32,,Asher Nyhoff,,150
+32,,Adam Van Uden,,151
+32,3.0,Michael Tellini,,152
+32,,Will Hutensky,,153
+32,3.0,Ben Lehrburger,,154
+32,3.0,Stokes,,155
+32,3.0,Will Toth,,156
+32,,Jayanth Uppaluri,,157
+32,4.0,Shania Smith ,,158
+32,,Chait Mehra,,159
+32,2.0,Chris Long,,160
+32,,June Kim,,161
+32,,Tommy Barbato,,162
+32,3.0,Patrick Howard,,163
+32,,Toby Harding,,164
+32,,Noble Rai,,165
+32,3.0,Andres Zubillaga ,,166
+32,3.0,Woojin Chung,,167
+32,,Chase Alvarado-Anderson,,168
+32,3.0,Basile Montagnese,,169
+32,,Noel Siegert,,170
+32,2.0,Chad Lasseter,,171
+32,2.0,Danny Gold,,172
+32,4.0,Liam Prevelige,,173
+32,,Eli Hecht,,174
+32,,Charlie East,,175
+32,3.0,Scott Dayton,,176
+32,3.0,Dylan Bienstock,,177
+32,3.0,Wilson Murane,,178
+32,3.0,Elian Gerard,,179
+33,,Connor Quigley,,180
+33,4.0,Andres Zubillaga ,,181
+33,3.0,Woojin Chung,,182
+33,3.0,Danny Gold,,183
+33,3.0,Ben Lehrburger,,184
+33,4.0,Shania Smith ,,185
+33,4.0,Chase Alvarado-Anderson,,186
+33,4.0,Carter Welch,,187
+33,,Chris Long,,188
+33,2.0,Crawford Crooks,,189
+33,,Toby Harding,,190
+33,4.0,Basile Montagnese,,191
+33,4.0,Patrick Howard,,192
+33,,Will Cook-Healy,,193
+33,,Noble Rai,,194
+33,,Asher Nyhoff,,195
+33,4.0,Michael Tellini,,196
+33,,Eli Hecht,,197
+33,5.0,Chait Mehra,,198
+33,3.0,Chad Lasseter,,199
+33,4.0,Jayanth Uppaluri,,200
+33,3.0,Elian Gerard,,201
+33,5.0,Tommy Barbato,,202
+33,3.0,Scott Dayton,,203
+33,,Liam Prevelige,,204
+33,,Noel Siegert,,205
+33,,Stokes,,206
+33,4.0,Adam Van Uden,,207
+33,5.0,Charlie East,,208
+33,3.0,Anthony Wang,,209
+33,5.0,Dylan Bienstock,,210
+33,4.0,Wilson Murane,,211
+33,4.0,Ethan Strauss,,212
+33,,Will Hutensky,,213
+33,3.0,Will Toth,,214
+33,,June Kim,,215
+34,3.0,Shania Smith ,,216
+34,3.0,Danny Gold,,217
+34,4.0,Woojin Chung,,218
+34,4.0,Andres Zubillaga ,,219
+34,4.0,Connor Quigley,,220
+34,3.0,Noble Rai,,221
+34,4.0,Liam Prevelige,,222
+34,4.0,Dylan Bienstock,,223
+34,5.0,Tommy Barbato,,224
+34,4.0,Basile Montagnese,,225
+34,3.0,Will Cook-Healy,,226
+34,,Eli Hecht,,227
+34,4.0,Elian Gerard,,228
+34,4.0,Patrick Howard,,229
+34,4.0,Scott Dayton,,230
+34,3.0,Michael Tellini,,231
+34,4.0,Toby Harding,,232
+34,5.0,Charlie East,,233
+34,,Asher Nyhoff,,234
+34,3.0,Anthony Wang,,235
+34,3.0,Carter Welch,,236
+34,3.0,Wilson Murane,,237
+34,4.0,Noel Siegert,,238
+34,,Chase Alvarado-Anderson,,239
+34,,Chait Mehra,,240
+34,,Crawford Crooks,,241
+34,,Chris Long,,242
+34,4.0,June Kim,,243
+34,4.0,Adam Van Uden,,244
+34,2.0,Chad Lasseter,,245
+34,3.0,Will Toth,,246
+34,4.0,Will Hutensky,,247
+34,,Jayanth Uppaluri,,248
+34,3.0,Stokes,,249
+34,4.0,Ethan Strauss,,250
+34,3.0,Ben Lehrburger,,251
+40,,Will Hutensky,,252
+40,4.0,Toby Harding,,253
+40,4.0,Elian Gerard,,254
+40,4.0,Liam Prevelige,,255
+40,,Connor Quigley,,256
+40,,Charlie East,,257
+40,,Noel Siegert,,258
+40,,Chris Long,,259
+40,4.0,Stokes,,260
+40,4.0,June Kim,,261
+40,,Crawford Crooks,,262
+40,5.0,Wilson Murane,,263
+40,3.0,Scott Dayton,,264
+40,3.0,Ben Lehrburger,,265
+40,,Eli Hecht,,266
+40,,Will Cook-Healy,,267
+40,,Tommy Barbato,,268
+40,,Noble Rai,,269
+40,,Jayanth Uppaluri,,270
+40,4.0,Danny Gold,,271
+40,3.0,Chad Lasseter,,272
+40,4.0,Basile Montagnese,,273
+40,3.0,Shania Smith ,,274
+40,3.0,Patrick Howard,,275
+40,,Adam Van Uden,,276
+40,,Chase Alvarado-Anderson,,277
+40,4.0,Dylan Bienstock,,278
+40,3.0,Carter Welch,,279
+40,,Chait Mehra,,280
+40,5.0,Anthony Wang,,281
+40,3.0,Will Toth,,282
+40,3.0,Ethan Strauss,,283
+40,4.0,Michael Tellini,,284
+40,,Asher Nyhoff,,285
+40,,Andres Zubillaga ,,286
+40,3.0,Woojin Chung,,287
+7,4.0,Basile Montagnese,,288
+7,3.0,June Kim,,289
+7,2.0,Ben Lehrburger,,290
+7,,Chris Long,,291
+7,3.0,Chad Lasseter,,292
+7,5.0,Wilson Murane,,293
+7,,Tommy Barbato,,294
+7,3.0,Michael Tellini,,295
+7,,Toby Harding,,296
+7,4.0,Shania Smith ,,297
+7,4.0,Andres Zubillaga ,,298
+7,5.0,Will Toth,,299
+7,5.0,Danny Gold,,300
+7,5.0,Jayanth Uppaluri,,301
+7,2.0,Anthony Wang,,302
+7,3.0,Elian Gerard,,303
+7,,Chase Alvarado-Anderson,,304
+7,1.0,Charlie East,,305
+7,4.0,Patrick Howard,,306
+7,3.0,Scott Dayton,,307
+7,5.0,Carter Welch,,308
+7,2.0,Ethan Strauss,,309
+7,,Stokes,,310
+7,,Liam Prevelige,,311
+7,,Chait Mehra,,312
+7,3.0,Woojin Chung,,313
+7,,Noel Siegert,,314
+7,,Asher Nyhoff,,315
+7,5.0,Eli Hecht,,316
+7,5.0,Will Cook-Healy,,317
+7,5.0,Dylan Bienstock,,318
+7,,Crawford Crooks,,319
+7,5.0,Will Hutensky,,320
+7,5.0,Connor Quigley,,321
+7,,Adam Van Uden,,322
+7,,Noble Rai,,323
+8,4.0,Asher Nyhoff,,324
+8,3.0,Woojin Chung,,325
+8,4.0,Shania Smith ,,326
+8,4.0,Toby Harding,,327
+8,4.0,Noble Rai,,328
+8,5.0,Danny Gold,,329
+8,4.0,Elian Gerard,,330
+8,4.0,Connor Quigley,,331
+8,4.0,Dylan Bienstock,,332
+8,,Ethan Strauss,,333
+8,4.0,Anthony Wang,,334
+8,5.0,Liam Prevelige,,335
+8,4.0,Michael Tellini,,336
+8,5.0,Basile Montagnese,,337
+8,4.0,Tommy Barbato,,338
+8,4.0,Will Cook-Healy,,339
+8,4.0,Will Toth,,340
+8,4.0,Wilson Murane,,341
+8,,Eli Hecht,,342
+8,3.0,Andres Zubillaga ,,343
+8,5.0,Patrick Howard,,344
+8,,Noel Siegert,,345
+8,,Jayanth Uppaluri,,346
+8,3.0,Chris Long,,347
+8,,Crawford Crooks,,348
+8,3.0,Carter Welch,,349
+8,5.0,Chad Lasseter,,350
+8,,Chase Alvarado-Anderson,,351
+8,,Chait Mehra,,352
+8,4.0,Ben Lehrburger,,353
+8,4.0,Stokes,,354
+8,3.0,June Kim,,355
+8,5.0,Will Hutensky,,356
+8,4.0,Scott Dayton,,357
+8,5.0,Adam Van Uden,,358
+8,1.0,Charlie East,,359
