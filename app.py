@@ -1,6 +1,7 @@
 import os
 import pickle
 import pandas as pd
+import turicreate as tc
 import sys
 import numpy
 from sklearn.linear_model import LinearRegression
