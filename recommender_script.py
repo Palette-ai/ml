@@ -5,16 +5,19 @@ import numpy as np
 import pandas as pd
 import pymongo
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
 USERNAME = os.getenv('USERNAME')
 PASSWORD = os.getenv('PASSWORD')
 
 client = pymongo.MongoClient('mongodb+srv://'+USERNAME+':'+PASSWORD+'@cluster0.zwmnc.mongodb.net/myFirstDatabase')
+# client = pymongo.MongoClient('mongodb+srv://paletteadmin:Dartmouthgreen@cluster0.zwmnc.mongodb.net/myFirstDatabase')
 
 db = client.myFirstDatabase
 dishratings_col = db.dishratings
 cursor = dishratings_col.find()
+
 list_cur = list(cursor)
 df = pd.DataFrame(list_cur)
 df = df.drop(['_id','rating_id_num','review'], axis=1)
