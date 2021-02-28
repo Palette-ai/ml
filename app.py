@@ -17,12 +17,22 @@ def rec():
     jsdata = request.get_json()
     print(jsdata['user_id'])
     user_id = jsdata['user_id']
-    return jsonify(jsdata)
+
+    item_sim_model_open = tc.load_model('finalized_recommender_model')
+    item_sim_recomm = item_sim_model_open.recommend(users=[user_id],k=5)
+    recs = item_sim_recomm['dish_id']
+
+    rec_list = []
+    for rec in recs:
+        rec_list.append(rec)
+
+    return jsonify(rec)
 
 # A welcome message to test our server
 @app.route('/')
 def index():
-    return "<h1>beep boop I am a dummy server</h1>"
+    
+    return "<t>bee boop this is a dummy server</t>"
 
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
