@@ -12,22 +12,6 @@ import json
 # app.py
 app = Flask(__name__)
 
-#small change
-
-
-@app.route('/rec/', methods=['POST'])
-def rec():
-
-    # could rerun and train model 
-    # OR 
-    # heroku dyno -> rerun script based on triggers, set up in proc file 
-
-    jsdata = request.get_json()
-    # would be an id in JSDATA
-    # call jsonify on whatever object made 
-
-    return jsonify(jsdata)
-
 @app.route('/rec', methods=['POST'])
 def rec():
     jsdata = request.get_json()
