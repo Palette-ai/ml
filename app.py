@@ -18,6 +18,7 @@ def rec():
     print(jsdata['user_id'])
     user_id = jsdata['user_id']
 
+    # open the model, and get recommendations
     item_sim_model_open = tc.load_model('finalized_recommender_model')
     item_sim_recomm = item_sim_model_open.recommend(users=[user_id],k=5)
     recs = item_sim_recomm['dish_id']
