@@ -28,9 +28,11 @@ def rec():
 
     return jsonify(jsdata)
 
-@app.route('/hello/', methods=['POST'])
-def hello():
+@app.route('/rec', methods=['POST'])
+def rec():
     jsdata = request.get_json()
+    print(jsdata['user_id'])
+    user_id = jsdata['user_id']
     return jsonify(jsdata)
 
 # A welcome message to test our server
