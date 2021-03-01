@@ -27,7 +27,7 @@ def rec():
     for rec in recs:
         rec_list.append(rec)
 
-    return jsonify(rec)
+    return jsonify(rec_list)
 
 # A welcome message to test our server
 @app.route('/')
