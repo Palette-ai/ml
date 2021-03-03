@@ -6,7 +6,6 @@ backcall==0.2.0
 cachetools==4.2.1
 certifi==2020.4.5.1
 chardet==3.0.4
-chess==1.2.2
 coremltools==3.3
 decorator==4.4.2
 distlib==0.3.1
