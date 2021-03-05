@@ -11,7 +11,10 @@ load_dotenv()
 USERNAME = os.getenv('USERNAME')
 PASSWORD = os.getenv('PASSWORD')
 
-client = pymongo.MongoClient('mongodb+srv://'+USERNAME+':'+PASSWORD+'@cluster0.zwmnc.mongodb.net/myFirstDatabase')
+auth_string = 'mongodb+srv://'+USERNAME+':'+PASSWORD+'@cluster0.zwmnc.mongodb.net/myFirstDatabase'
+print(auth_string)
+client = pymongo.MongoClient(auth_string)
+
 # client = pymongo.MongoClient('mongodb+srv://paletteadmin:Dartmouthgreen@cluster0.zwmnc.mongodb.net/myFirstDatabase')
 
 db = client.myFirstDatabase
