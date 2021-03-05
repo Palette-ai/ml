@@ -7,9 +7,8 @@ import pymongo
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
-USERNAME = os.getenv('USERNAME')
-PASSWORD = os.getenv('PASSWORD')
+USERNAME = os.environ('USERNAME')
+PASSWORD = os.environ('PASSWORD')
 
 auth_string = 'mongodb+srv://'+USERNAME+':'+PASSWORD+'@cluster0.zwmnc.mongodb.net/myFirstDatabase'
 print(auth_string)
