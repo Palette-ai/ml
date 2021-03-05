@@ -7,8 +7,8 @@ import pymongo
 from dotenv import load_dotenv
 import os
 
-USERNAME = os.environ.get('USERNAME')
-PASSWORD = os.environ.get('PASSWORD')
+USERNAME = os.environ["USERNAME"]
+PASSWORD = os.environ["PASSWORD"]
 
 # print(USERNAME)
 # print(PASSWORD)
