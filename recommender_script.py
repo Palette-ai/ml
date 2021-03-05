@@ -10,8 +10,11 @@ import os
 USERNAME = os.environ.get('USERNAME')
 PASSWORD = os.environ.get('PASSWORD')
 
-print(USERNAME)
-print(PASSWORD)
+# print(USERNAME)
+# print(PASSWORD)
+
+# USERNAME = 'paletteadmin'
+# PASSWORD = 'Dartmouthgreen'
 
 auth_string = 'mongodb+srv://'+USERNAME+':'+PASSWORD+'@cluster0.zwmnc.mongodb.net/myFirstDatabase'
 print(auth_string)
@@ -26,6 +29,7 @@ cursor = dishratings_col.find()
 list_cur = list(cursor)
 df = pd.DataFrame(list_cur)
 df = df.drop(['_id','rating_id_num','review'], axis=1)
+print(df)
 
 rec_data = tc.SFrame(df)
 item_sim_model = tc.item_similarity_recommender.create(rec_data, user_id='user_id', item_id='dish_id', target='rating', similarity_type='cosine')
