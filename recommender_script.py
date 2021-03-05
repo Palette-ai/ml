@@ -6,7 +6,6 @@ import pandas as pd
 import pymongo
 from dotenv import load_dotenv
 import os
-import boto3
 
 USERNAME = os.environ["USERNAME"]
 PASSWORD = os.environ["PASSWORD"]
