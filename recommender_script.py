@@ -10,17 +10,9 @@ import os
 USERNAME = os.environ["USERNAME"]
 PASSWORD = os.environ["PASSWORD"]
 
-# print(USERNAME)
-# print(PASSWORD)
-
-# USERNAME = 'paletteadmin'
-# PASSWORD = 'Dartmouthgreen'
-
 auth_string = 'mongodb+srv://'+USERNAME+':'+PASSWORD+'@cluster0.zwmnc.mongodb.net/myFirstDatabase'
 print(auth_string)
 client = pymongo.MongoClient(auth_string)
-
-# client = pymongo.MongoClient('mongodb+srv://paletteadmin:Dartmouthgreen@cluster0.zwmnc.mongodb.net/myFirstDatabase')
 
 db = client.myFirstDatabase
 dishratings_col = db.dishratings
