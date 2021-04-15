@@ -1,0 +1,51 @@
+,_id,dish_id_num,dish_name,restaurant_id,average_rating,features,description,tags,rating_ids,obj_id
+1,ObjectId(603ab53b88dbe9c89607dfa8),1,Pad Thai,1,5,"[1, 2, 4, 6, 7]","Thin rice noodles stir-fried with egg, green onions, bean sprouts and ground peanuts.",,,603ab53b88dbe9c89607dfa8
+2,ObjectId(603ab53b88dbe9c89607dfab),2,Pad Kee Mao,1,1.3,"[1, 2, 4, 7]","Wide rice noodles stir-fried with egg, fresh chili, bell peppers, onions, green beans and basil leaves.",,,603ab53b88dbe9c89607dfab
+3,ObjectId(603ab53b88dbe9c89607dfaa),3,Green Curry,1,4,"[1, 2, 4, 7]","Thai Green curry paste with coconut milk, basil leaves, bamboo shoots, eggplant, zucchini and bell peppers.",,,603ab53b88dbe9c89607dfaa
+4,ObjectId(603ab53b88dbe9c89607dfa7),4,Panang Curry,1,2.5,"[1, 2, 4, 7]","Thai Panang curry paste with coconut milk, kaffir lime leaves and bell peppers.",,,603ab53b88dbe9c89607dfa7
+5,ObjectId(603ab53b88dbe9c89607dfa9),5,Pad Ka Pao,1,1.5,"[1, 2, 4, 7]","Fresh ground chilis, stir-fried with basil leaves, onions, fresh garlic, bamboo shoots, green beans and bell peppers.",,,603ab53b88dbe9c89607dfa9
+6,ObjectId(603ab53b88dbe9c89607dfac),6,Pra Ram,1,5,"[1, 2, 6, 7]","Your choice of meat with steamed vegetables, topped with peanut sauce.",,,603ab53b88dbe9c89607dfac
+7,ObjectId(603ab53b88dbe9c89607dfad),7,Pad See Ew,1,2.1,"[1, 2, 7]","Wide rice noodles stir-fried with egg, sweet soy sauce, broccoli and carrots.",,,603ab53b88dbe9c89607dfad
+8,ObjectId(603ab53b88dbe9c89607dfae),8,Crispy Chicken Fried Rice,1,3.3,"[1, 2, 7]","Fried rice with egg, onions, carrots, green peas and tomatoes topped with crispy chicken.",,,603ab53b88dbe9c89607dfae
+9,ObjectId(603ab53b88dbe9c89607dfaf),9,Kao Pad Ka Pao,1,5,"[1, 2, 4, 7]","Spicy fried rice with egg, fresh ground chili, onions, bell peppers, garlic, green beans and basil leaves.",,,603ab53b88dbe9c89607dfaf
+10,ObjectId(603ab53b88dbe9c89607dfb0),10,Sweet Sticky Rice with Mango,1,2.3,"[3, 4, 5, 7]",,,,603ab53b88dbe9c89607dfb0
+11,ObjectId(603ab53b88dbe9c89607dfb2),11,Grilled Lobster Club,2,4.1,"[1, 12]","bacon, lettuce, tomato, Dijon aioli",,,603ab53b88dbe9c89607dfb2
+12,ObjectId(603ab53b88dbe9c89607dfb1),12,Turkey Wrap,2,5,"[1, 12]","VT turkey, cheddar, cranberry, mayo",,,603ab53b88dbe9c89607dfb1
+13,ObjectId(603ab53b88dbe9c89607dfb3),13,Fried Buttermilk Chicken Sandwhich,2,1.2,"[2, 12]","Spicy mayo, slaw, pickles",,,603ab53b88dbe9c89607dfb3
+14,ObjectId(603ab53b88dbe9c89607dfb4),14,"The ""Murph"" Burger",2,1.8,"[2, 12]","American cheese, crispy shallots, bacon, Baja sauce",,,603ab53b88dbe9c89607dfb4
+15,ObjectId(603ab53b88dbe9c89607dfb5),15,Grilled Beef Ribeye,2,1.2,"[2, 12]","Mashed potato, red wine demi glaze",,,603ab53b88dbe9c89607dfb5
+16,ObjectId(603ab53b88dbe9c89607dfb6),16,Irish Shepards Pie,2,1.1,[2],"Ground lamb, peas, onions, corn, carrots, mashed potato",,,603ab53b88dbe9c89607dfb6
+17,ObjectId(603ab53b88dbe9c89607dfb7),17,Smoked Barbeque Pulled Pork Taco,2,1.5,"[2, 9, 12]","Corn Slaw, pickled onion, feta, radish, Pico, lime",,,603ab53b88dbe9c89607dfb7
+18,ObjectId(603ab53b88dbe9c89607dfb9),18,Grilled Salmon,2,4.6,"[2, 12]","Winter Slaw, horseradish sauce",,,603ab53b88dbe9c89607dfb9
+19,ObjectId(603ab53b88dbe9c89607dfba),19,Seared Pork Chop,2,4.1,"[2, 12]","Pan seared pork chop, potato confit, green beans, cinnamon pear demi",,,603ab53b88dbe9c89607dfba
+20,ObjectId(603ab53b88dbe9c89607dfb8),20,Housemade Black Bean Burger,2,4.7,"[2, 4, 12]","Lettuce, tomato, pickle, chipotle aioli",,,603ab53b88dbe9c89607dfb8
+21,ObjectId(603ab53b88dbe9c89607dfbb),21,Grilled Murphy's Meatloaf,2,4.2,"[2, 12]","Mashed potato, green beans, red wine demi",,,603ab53b88dbe9c89607dfbb
+22,ObjectId(603ab53b88dbe9c89607dfbc),22,Certified Angus Sirloin Burger,2,4.5,"[2, 12]","Lettuce, tomato, pickle",,,603ab53b88dbe9c89607dfbc
+23,ObjectId(603ab53b88dbe9c89607dfbd),23,Beat Kimchi Fried Egg Sandwich,2,3.7,"[2, 4, 12]","Cheddar, avocado, grilled sourdough",,,603ab53b88dbe9c89607dfbd
+24,ObjectId(603ab53b88dbe9c89607dfbe),24,Baked Fish Tacos,2,1.5,"[2, 9, 12]","Corn Slaw, pickled onion, feta, radish, Pico, lime",,,603ab53b88dbe9c89607dfbe
+25,ObjectId(603ab53b88dbe9c89607dfbf),25,B.L.A.T. Wrap,2,3.7,"[2, 12]","Bacon, lettuce, tomato, avocado, mayo",,,603ab53b88dbe9c89607dfbf
+26,ObjectId(603ab53b88dbe9c89607dfc0),26,Vegan Risotto,2,2.9,"[2, 5, 12]","Butternut squash, nutritional yeast, garbanzo bean, scallion, shiitake bacon",,,603ab53b88dbe9c89607dfc0
+27,ObjectId(603ab53b88dbe9c89607dfc1),27,Murphy's Mac'n Cheese,2,1.8,"[2, 12]","Penne, cheddar, bread crumbs",,,603ab53b88dbe9c89607dfc1
+28,ObjectId(603ab53b88dbe9c89607dfc2),28,Fish & Chips,2,4.9,"[2, 12]","Fried white fish, slaw, tartar",,,603ab53b88dbe9c89607dfc2
+29,ObjectId(603ab53b88dbe9c89607dfc4),29,Pan Seared Statler Chicken,2,1.1,"[2, 12]","Sweet potato gratin, green beans, pan jus",,,603ab53b88dbe9c89607dfc4
+30,ObjectId(603ab53b88dbe9c89607dfc3),30,Thai Chicken,3,1.6,"[2, 7, 12]","sautÃ©ed chicken strips with coconut milk, green curry, ginger, scallions and sweet bell peppers, served over confetti rice",,,603ab53b88dbe9c89607dfc3
+31,ObjectId(603ab53b88dbe9c89607dfc5),31,Fish Tacos,3,1.3,"[2, 9, 12]","your choice of seafood with shredded cabbage, cheddar, guacamole, sides Mexican rice, chipotle ranch and rustic salsa",,,603ab53b88dbe9c89607dfc5
+32,ObjectId(603ab53b88dbe9c89607dfc6),32,Pepperoni Pizza,3,2,"[1, 2, 10]",the Classic with pepperoni,,,603ab53b88dbe9c89607dfc6
+33,ObjectId(603ab53b88dbe9c89607dfc7),33,The Margherita,3,3.1,"[1, 2, 4, 10]","ripe tomato, roasted garlic, fontina, fresh mozzarella, basil dressed arugala on top",,,603ab53b88dbe9c89607dfc7
+34,ObjectId(603ab53b88dbe9c89607dfc8),34,Half-Pound Beef Burger,3,2.8,"[1, 2, 12]","add cheddar, Swiss, or American, add bacon",,,603ab53b88dbe9c89607dfc8
+35,ObjectId(603ab53b88dbe9c89607dfc9),35,Beyond Burger,3,4.5,"[1, 2, 4, 12]","plant-based patty, BBQ, cheddar, avocado, crispy onion",,,603ab53b88dbe9c89607dfc9
+36,ObjectId(603ab53b88dbe9c89607dfca),36,Black Bean Burger,3,1.2,"[1, 2, 4, 12]","corn, peppers,onion, cheddar, Mexican spices, topped with tomato, arugula and guacamole",,,603ab53b88dbe9c89607dfca
+37,ObjectId(603ab53b88dbe9c89607dfcc),37,Turkey BLT,3,4.5,"[1, 2, 12]",with maple aioli on grilled brioche,,,603ab53b88dbe9c89607dfcc
+38,ObjectId(603ab53b88dbe9c89607dfcb),38,Chicken Alfredo,3,3.1,"[2, 12]","sautÃ©ed chicken strips with bacon, garlic, basil, tossed in parmesan cream sauce and rigatoni",,,603ab53b88dbe9c89607dfcb
+39,ObjectId(603ab53b88dbe9c89607dfcd),39,Almond Salmon,3,4.5,"[2, 12]","baby arugula, toasted almonds, lemon basil quinoa, herb honey glaze",,,603ab53b88dbe9c89607dfcd
+40,ObjectId(603ab53b88dbe9c89607dfce),40,Steak Tacos,3,2.2,"[2, 9, 12]","sliced medium rare tenderloin, lettuce, tomato cheddar, red onion, served with Mexican rice, rustic salsa and guacamole",,,603ab53b88dbe9c89607dfce
+41,ObjectId(603ab53b88dbe9c89607dfcf),41,Fish & Chips,3,3.9,"[1, 2, 12]","beer battered north Atlantic cod served with fries, slaw and tartar sauce",,,603ab53b88dbe9c89607dfcf
+42,ObjectId(603ab53b88dbe9c89607dfd0),42,Steak Tips,3,3.4,[2],"beef tenderloin tips, grilled peppers, crispy onions, over confetti rice",,,603ab53b88dbe9c89607dfd0
+43,ObjectId(603ab53b88dbe9c89607dfd4),43,Four Cheese Baked Ziti,4,2.1,[2],"Add chicken, sweet Italian sausage or meatballs for $2.00",,,603ab53b88dbe9c89607dfd4
+44,ObjectId(603ab53b88dbe9c89607dfd1),44,Chicken or Eggplant Parmesan,4,1,[2],,,,603ab53b88dbe9c89607dfd1
+45,ObjectId(603ab53b88dbe9c89607dfd8),45,Buffalo Brick,4,4.8,"[1, 2, 10]","Tomato sauce, spicy chicken, tomatoes, peppers, onions and crushed red peppers.",,,603ab53b88dbe9c89607dfd8
+46,ObjectId(603ab53b88dbe9c89607dfd7),46,The Original Brick,4,3.3,"[1, 2, 10]","Mozzarella topped with tomato sauce, fresh basil and extra virgin olive oil.",,,603ab53b88dbe9c89607dfd7
+47,ObjectId(603ab53b88dbe9c89607dfd2),47,Philly Cheese Steak Brick,4,3.5,"[1, 2, 10]","Tomato sauce, mozzarella and american cheeses, beef, peppers, mushrooms and onions.",,,603ab53b88dbe9c89607dfd2
+48,ObjectId(603ab53b88dbe9c89607dfd3),48,Caprese Salad,4,5,"[1, 2, 4]","Seasoned fresh mozzarella, fresh basil and tomatoes served on a bed of romaine; finished with a drizzle of extra virgin olive oil and balsamic reduction.",,,603ab53b88dbe9c89607dfd3
+49,ObjectId(603ab53b88dbe9c89607dfd5),49,Greek Salad,4,1.1,"[1, 2]","Crisp greens with classic Mediterranean veggies, pepperoncini, feta cheese, salami, and ham, served with greek dressing.",,,603ab53b88dbe9c89607dfd5
+50,ObjectId(603ab53b88dbe9c89607dfd6),50,Prosciutto Penne Pasta with Chicken,4,4.2,[2],"Prosciutto and chicken breast tossed in a creamy pesto sauce with tomatoes, broccoli and penne.",,,603ab53b88dbe9c89607dfd6
