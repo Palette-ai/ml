@@ -3,19 +3,28 @@ import pickle
 import pandas as pd
 import turicreate as tc
 import sys
-import numpy
 from sklearn.linear_model import LinearRegression
 from flask import Flask, request, jsonify
 import requests
 # # from flask_cors import CORS, cross_origin
 import json
-from sentence_transformers import SentenceTransformer, util
 from datetime import date, timedelta, datetime
+from re import sub
+from gensim.utils import simple_preprocess
+import numpy as np
+import gensim.downloader as api
+from gensim.corpora import Dictionary
+from gensim.models import TfidfModel
+from gensim.models import WordEmbeddingSimilarityIndex
+from gensim.similarities import SparseTermSimilarityMatrix
+from gensim.similarities import SoftCosineSimilarity
 
 # app.py
 app = Flask(__name__)
 
-
+# Load the model: this is a big file, can take a while to download and open
+glove = api.load("glove-wiki-gigaword-50")    
+similarity_index = WordEmbeddingSimilarityIndex(glove)
 
 def extract_average(json):
     try:
@@ -25,7 +34,17 @@ def extract_average(json):
 
 today = datetime.today()
 margin = timedelta(days = 14)
-lang_model = SentenceTransformer('paraphrase-distilroberta-base-v1')
+
+stopwords = ['the', 'and', 'are', 'a']
+
+# From: https://github.com/RaRe-Technologies/gensim/blob/develop/docs/notebooks/soft_cosine_tutorial.ipynb
+def preprocess(doc):
+    # Tokenize, clean up input document string
+    doc = sub(r'<img[^<>]+(>|$)', " image_token ", doc)
+    doc = sub(r'<[^<>]+(>|$)', " ", doc)
+    doc = sub(r'\[img_assist[^]]*?\]', " ", doc)
+    doc = sub(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', " url_token ", doc)
+    return [token for token in simple_preprocess(doc, min_len=0, max_len=float("inf")) if token not in stopwords]
 
 @app.route('/rec', methods=['POST'])
 def rec():
@@ -76,19 +95,43 @@ def rec():
 
         for dish in new_dish_df:
             for rec in rec_dish_df:
+                print("HERE")
                 #Compute embedding for both descriptions
-                embeddingsDish = lang_model.encode(dish['description'], convert_to_tensor=True, show_progress_bar=False)
-                embeddingsRec = lang_model.encode(rec['description'], convert_to_tensor=True, show_progress_bar=False)
+                query_string = dish['description']
+                documents = [rec['description']]
+
+                # Preprocess the documents, including the query string
+                corpus = [preprocess(document) for document in documents]
+                query = preprocess(query_string)
+
+                # Build the term dictionary, TF-idf model
+                dictionary = Dictionary(corpus+[query])
+                tfidf = TfidfModel(dictionary=dictionary)
                 
+                # Create the term similarity matrix.  
+                similarity_matrix = SparseTermSimilarityMatrix(similarity_index, dictionary, tfidf)
+
+                # Compute Soft Cosine Measure between the query and the documents.
+                # From: https://github.com/RaRe-Technologies/gensim/blob/develop/docs/notebooks/soft_cosine_tutorial.ipynb
+                query_tf = tfidf[dictionary.doc2bow(query)]
+
+                index = SoftCosineSimilarity(
+                    tfidf[[dictionary.doc2bow(document) for document in corpus]],
+                    similarity_matrix)
+
+                doc_similarity_scores = index[query_tf]
+
                 #Compute cosine-similarits
-                cosine_scores = util.pytorch_cos_sim(embeddingsDish, embeddingsRec)
+                cosine_scores = doc_similarity_scores[0]
+
+                print(cosine_scores)
 
                 if max_score < cosine_scores:
                     max_dish = dish['_id']
                     max_score = cosine_scores
             
             
-        print(max_dish, max_score)
+
         rec_list.append(max_dish)
 
         return jsonify(rec_list)
