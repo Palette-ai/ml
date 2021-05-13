@@ -15,7 +15,7 @@ import numpy as np
 import gensim.downloader as api
 from gensim.corpora import Dictionary
 from gensim.models import TfidfModel
-from gensim.models import WordEmbeddingSimilarityIndex
+from gensim.similarities import WordEmbeddingSimilarityIndex
 from gensim.similarities import SparseTermSimilarityMatrix
 from gensim.similarities import SoftCosineSimilarity
 
@@ -25,6 +25,7 @@ app = Flask(__name__)
 # Load the model: this is a big file, can take a while to download and open
 glove = api.load("glove-wiki-gigaword-50")    
 similarity_index = WordEmbeddingSimilarityIndex(glove)
+
 
 def extract_average(json):
     try:
