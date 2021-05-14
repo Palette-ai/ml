@@ -22,22 +22,17 @@ from gensim.similarities import SoftCosineSimilarity
 # app.py
 app = Flask(__name__)
 
-# Load the model: this is a big file, can take a while to download and open
-glove = api.load("glove-wiki-gigaword-50")    
-similarity_index = WordEmbeddingSimilarityIndex(glove)
-
-
+glove = None
+similarity_index = None
+today = datetime.today()
+margin = timedelta(days = 14)
+stopwords = ['the', 'and', 'are', 'a']
 
 def extract_average(json):
     try:
         return int(json['average_rating'])
     except KeyError:
         return 0
-
-today = datetime.today()
-margin = timedelta(days = 14)
-
-stopwords = ['the', 'and', 'are', 'a']
 
 # From: https://github.com/RaRe-Technologies/gensim/blob/develop/docs/notebooks/soft_cosine_tutorial.ipynb
 def preprocess(doc):
@@ -216,3 +211,7 @@ if __name__ == '__main__':
 
     port = int(os.environ.get('PORT', 5000))
     app.run(port=port)
+
+    # Load the model: this is a big file, can take a while to download and open
+    glove = api.load("glove-wiki-gigaword-50")    
+    similarity_index = WordEmbeddingSimilarityIndex(glove)
