@@ -87,49 +87,52 @@ def rec():
         # print(r.text)
         json_data = json.loads(r.text)
         rec_dish_df = json_data['data']['dishByIds']
-        max_score = 0
-        max_dish = new_dish_df[0]['_id']
 
-        for dish in new_dish_df:
-            for rec in rec_dish_df:
-                print("HERE")
-                #Compute embedding for both descriptions
-                query_string = dish['description']
-                documents = [rec['description']]
+        if len(new_dish_df) > 0:
+            max_score = 0
+            max_dish = new_dish_df[0]['_id']
 
-                # Preprocess the documents, including the query string
-                corpus = [preprocess(document) for document in documents]
-                query = preprocess(query_string)
 
-                # Build the term dictionary, TF-idf model
-                dictionary = Dictionary(corpus+[query])
-                tfidf = TfidfModel(dictionary=dictionary)
-                
-                # Create the term similarity matrix.  
-                similarity_matrix = SparseTermSimilarityMatrix(similarity_index, dictionary, tfidf)
+            for dish in new_dish_df:
+                for rec in rec_dish_df:
+                    print("HERE")
+                    #Compute embedding for both descriptions
+                    query_string = dish['description']
+                    documents = [rec['description']]
 
-                # Compute Soft Cosine Measure between the query and the documents.
-                # From: https://github.com/RaRe-Technologies/gensim/blob/develop/docs/notebooks/soft_cosine_tutorial.ipynb
-                query_tf = tfidf[dictionary.doc2bow(query)]
+                    # Preprocess the documents, including the query string
+                    corpus = [preprocess(document) for document in documents]
+                    query = preprocess(query_string)
 
-                index = SoftCosineSimilarity(
-                    tfidf[[dictionary.doc2bow(document) for document in corpus]],
-                    similarity_matrix)
+                    # Build the term dictionary, TF-idf model
+                    dictionary = Dictionary(corpus+[query])
+                    tfidf = TfidfModel(dictionary=dictionary)
+                    
+                    # Create the term similarity matrix.  
+                    similarity_matrix = SparseTermSimilarityMatrix(similarity_index, dictionary, tfidf)
 
-                doc_similarity_scores = index[query_tf]
+                    # Compute Soft Cosine Measure between the query and the documents.
+                    # From: https://github.com/RaRe-Technologies/gensim/blob/develop/docs/notebooks/soft_cosine_tutorial.ipynb
+                    query_tf = tfidf[dictionary.doc2bow(query)]
 
-                #Compute cosine-similarits
-                cosine_scores = doc_similarity_scores[0]
+                    index = SoftCosineSimilarity(
+                        tfidf[[dictionary.doc2bow(document) for document in corpus]],
+                        similarity_matrix)
 
-                print(cosine_scores)
+                    doc_similarity_scores = index[query_tf]
 
-                if max_score < cosine_scores:
-                    max_dish = dish['_id']
-                    max_score = cosine_scores
+                    #Compute cosine-similarits
+                    cosine_scores = doc_similarity_scores[0]
+
+                    print(cosine_scores)
+
+                    if max_score < cosine_scores:
+                        max_dish = dish['_id']
+                        max_score = cosine_scores
             
             
 
-        rec_list.append(max_dish)
+            rec_list.append(max_dish)
 
         return jsonify(rec_list)
 
