@@ -213,7 +213,6 @@ def index():
 
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
-    # app.run(threaded=True, port=7000)
 
     port = int(os.environ.get('PORT', 5000))
     app.run(port=port)
@@ -221,3 +220,5 @@ if __name__ == '__main__':
     # Load the model: this is a big file, can take a while to download and open
     glove = api.load("glove-wiki-gigaword-50")    
     similarity_index = WordEmbeddingSimilarityIndex(glove)
+    print("load_model")
+
