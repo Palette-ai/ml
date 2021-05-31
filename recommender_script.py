@@ -8,13 +8,15 @@ from dotenv import load_dotenv
 import os
 from bson.objectid import ObjectId
 
+# get authentication credentials
 USERNAME = os.environ["USERNAME_DB"]
 PASSWORD = os.environ["PASSWORD_DB"]
 
+# connect to mongo
 auth_string = 'mongodb+srv://'+USERNAME+':'+PASSWORD+'@cluster0.zwmnc.mongodb.net/myFirstDatabase'
 client = pymongo.MongoClient(auth_string)
 
-# recommender script
+# recommender script, updates the recommendation model stored in an amazon s3 bucket
 db = client.myFirstDatabase
 dishratings_col = db.dishratings
 cursor = dishratings_col.find()
@@ -29,7 +31,7 @@ item_sim_model = tc.item_similarity_recommender.create(rec_data, user_id='user_i
 filename = 's3://paletterecommendermodel/finalized_recommender_model/'
 item_sim_model.save('s3://paletterecommendermodel/finalized_recommender_model/')
 
-# average rating script
+# average rating script, updates the average ratings for each dish using the ratings that were added during the day 
 dishes = db.dishes
 dish_cursor = dishes.find()
 list_cur_dish = list(dish_cursor)

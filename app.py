@@ -6,7 +6,6 @@ import sys
 from sklearn.linear_model import LinearRegression
 from flask import Flask, request, jsonify
 import requests
-# # from flask_cors import CORS, cross_origin
 import json
 from datetime import date, timedelta, datetime
 from re import sub
@@ -45,35 +44,36 @@ def preprocess(doc):
 
 @app.route('/rec', methods=['POST'])
 def rec():
-    jsdata = request.get_json()
-    # print(jsdata['user_id'])
-    user_id = jsdata['user_id']
 
+    jsdata = request.get_json()
+    user_id = jsdata['user_id']
     dish_rating_df = get_dish_ratings(user_id)
 
+    # if a user has reviewed greater than or equal to 5 dishes, they are not a new user, and will be given recommendations
     if(len(dish_rating_df) >= 5):
 
         print("Recommend")
         model = tc.load_model("s3://paletterecommendermodel/finalized_recommender_model/")
-        item_sim_recomm = model.recommend(users=[user_id],k=50)
+        item_sim_recomm = model.recommend(users=[user_id],k=20)
         recs = item_sim_recomm['dish_id']
 
         df = get_dishes()
         new_dish_df = []
 
-        #filter out all that were not added within the last two weeks
+        #filter out all that were not added within the last two weeks, add new dishes to the new_dish_df
         for dish in df:
         
                 pyth_date = datetime.strptime(dish['createdAt'], '%Y-%m-%dT%H:%M:%S.%fZ')
                 if (today - margin) <= pyth_date <= today:
                     new_dish_df.append(dish)
 
-        print(new_dish_df)
 
+        # append recommendation ids to the rec list
         rec_list = []
         for rec in recs:
             rec_list.append(rec)
 
+        # query the database for the recommended dishes using recommendation ids
         rec_dish_query = """query {
   		dishByIds (_ids:""" + json.dumps(rec_list) + """){
 			description
@@ -83,15 +83,15 @@ def rec():
 
         url = 'https://palette-backend.herokuapp.com/graphql'
         r = requests.post(url, json={'query': rec_dish_query})
-        # print(r.status_code)
-        # print(r.text)
         json_data = json.loads(r.text)
         rec_dish_df = json_data['data']['dishByIds']
 
+        # if there are any new_dishes, figure out which is most similar to a dish on the recommended list using semantic similarity
+        # then add this dish to the list returned to the user
         if len(new_dish_df) > 0:
+            
             max_score = 0
             max_dish = new_dish_df[0]['_id']
-
 
             for dish in new_dish_df:
                 for rec in rec_dish_df:
@@ -131,13 +131,16 @@ def rec():
                         max_score = cosine_scores
             
             
-
+            # add the most similar dish to the recommendation list
             rec_list.append(max_dish)
-
+        
+        # return the recommended dishes
         return jsonify(rec_list)
 
+    # this is a new user, which means we need to reutrn the 20 most popular dishes
     else:
 
+        # 
         print("Popular")
         dish_df = get_dishes()
         dish_df.sort(key=extract_average, reverse=True)
