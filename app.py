@@ -8,24 +8,16 @@ from flask import Flask, request, jsonify
 import requests
 import json
 from datetime import date, timedelta, datetime
-from re import sub
-from gensim.utils import simple_preprocess
 import numpy as np
-import gensim.downloader as api
-from gensim.corpora import Dictionary
-from gensim.models import TfidfModel
-from gensim.similarities import WordEmbeddingSimilarityIndex
-from gensim.similarities import SparseTermSimilarityMatrix
-from gensim.similarities import SoftCosineSimilarity
+import random
 
 # app.py
 app = Flask(__name__)
 
-glove = None
-similarity_index = None
+
 today = datetime.today()
 margin = timedelta(days = 14)
-stopwords = ['the', 'and', 'are', 'a']
+
 
 def extract_average(json):
     try:
@@ -33,14 +25,6 @@ def extract_average(json):
     except KeyError:
         return 0
 
-# From: https://github.com/RaRe-Technologies/gensim/blob/develop/docs/notebooks/soft_cosine_tutorial.ipynb
-def preprocess(doc):
-    # Tokenize, clean up input document string
-    doc = sub(r'<img[^<>]+(>|$)', " image_token ", doc)
-    doc = sub(r'<[^<>]+(>|$)', " ", doc)
-    doc = sub(r'\[img_assist[^]]*?\]', " ", doc)
-    doc = sub(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', " url_token ", doc)
-    return [token for token in simple_preprocess(doc, min_len=0, max_len=float("inf")) if token not in stopwords]
 
 @app.route('/rec', methods=['POST'])
 def rec():
@@ -88,51 +72,13 @@ def rec():
 
         # if there are any new_dishes, figure out which is most similar to a dish on the recommended list using semantic similarity
         # then add this dish to the list returned to the user
+        print(new_dish_df)
         if len(new_dish_df) > 0:
             
-            max_score = 0
-            max_dish = new_dish_df[0]['_id']
-
-            for dish in new_dish_df:
-                for rec in rec_dish_df:
-                    print("HERE")
-                    #Compute embedding for both descriptions
-                    query_string = dish['description']
-                    documents = [rec['description']]
-
-                    # Preprocess the documents, including the query string
-                    corpus = [preprocess(document) for document in documents]
-                    query = preprocess(query_string)
-
-                    # Build the term dictionary, TF-idf model
-                    dictionary = Dictionary(corpus+[query])
-                    tfidf = TfidfModel(dictionary=dictionary)
-                    
-                    # Create the term similarity matrix.  
-                    similarity_matrix = SparseTermSimilarityMatrix(similarity_index, dictionary, tfidf)
-
-                    # Compute Soft Cosine Measure between the query and the documents.
-                    # From: https://github.com/RaRe-Technologies/gensim/blob/develop/docs/notebooks/soft_cosine_tutorial.ipynb
-                    query_tf = tfidf[dictionary.doc2bow(query)]
-
-                    index = SoftCosineSimilarity(
-                        tfidf[[dictionary.doc2bow(document) for document in corpus]],
-                        similarity_matrix)
-
-                    doc_similarity_scores = index[query_tf]
-
-                    #Compute cosine-similarits
-                    cosine_scores = doc_similarity_scores[0]
-
-                    print(cosine_scores)
-
-                    if max_score < cosine_scores:
-                        max_dish = dish['_id']
-                        max_score = cosine_scores
-            
+            rand_dish = random.choice(new_dish_df)
             
             # add the most similar dish to the recommendation list
-            rec_list.append(max_dish)
+            rec_list.append(rand_dish)
         
         # return the recommended dishes
         return jsonify(rec_list)
