@@ -54,7 +54,7 @@ def rec():
 
         print("Recommend")
         model = tc.load_model("s3://paletterecommendermodel/finalized_recommender_model/")
-        item_sim_recomm = model.recommend(users=[user_id],k=20)
+        item_sim_recomm = model.recommend(users=[user_id],k=50)
         recs = item_sim_recomm['dish_id']
 
         df = get_dishes()
