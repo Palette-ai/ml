@@ -212,11 +212,12 @@ def index():
     return "<t>bee boop this is a dummy server</t>"
 
 if __name__ == '__main__':
-    # Threaded option to enable multiple instances for multiple user access support
 
+    # Threaded option to enable multiple instances for multiple user access support
     port = int(os.environ.get('PORT', 5000))
     app.run(port=port)
 
+    print("starting to load model")
     # Load the model: this is a big file, can take a while to download and open
     glove = api.load("glove-wiki-gigaword-50")    
     similarity_index = WordEmbeddingSimilarityIndex(glove)
