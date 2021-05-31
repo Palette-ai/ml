@@ -78,7 +78,7 @@ def rec():
             rand_dish = random.choice(new_dish_df)
             
             # add the most similar dish to the recommendation list
-            rec_list.append(rand_dish)
+            rec_list.append(rand_dish["_id"])
         
         # return the recommended dishes
         return jsonify(rec_list)
